@@ -10,12 +10,14 @@ const renderCloude = document.querySelector("#renderCloude");
 const weatherData = document.querySelector("#weatherData");
 const wetherPhoto = document.querySelector("#wetherPhoto");
 const mainContener = document.querySelector("#mainContener");
-const mainCrenderFiveDayForcastontener = document.querySelector("#renderFiveDayForcast");
+const mainCrenderFiveDayForcastontener = document.querySelector(
+  "#renderFiveDayForcast"
+);
 
 const API_key = "8012e74eb25fefcf886f782905ca49e6";
 
 function setDropdownData(data) {
-  console.log(data);
+  // console.log(data);
   let option = "";
   option += `<option value="Previous Search" >Previous Search</option>`;
   for (const element of data) {
@@ -29,22 +31,26 @@ function renderFiveDaysForecast(fiveDaysForecast) {
   let box = "";
   for (const element of fiveDaysForecast) {
     let date = element.dt_txt.split(" ")[0];
-    let parts = date.split("-"); 
-     date = `${parts[2]}-${parts[1]}-${parts[0]}`;
-    
-    console.log(date)
+    let parts = date.split("-");
+    date = `${parts[2]}-${parts[1]}-${parts[0]}`;
 
-    console.log(element.main.temp_max);
+    // console.log(date);
 
     console.log();
     box += `<div>
             <p class="font-semibold text-md text-gray-300">${date}</p>
-            <img  src="https://openweathermap.org/img/wn/${element.weather[0].icon}@2x.png" class="w-15 mx-auto my-1" />
-            <p class="text-gray-300">${Math.round(element.main.temp_max-273.15)}°C</p>
-            <p class="text-gray-300 text-xs">${element.weather[0].description}</p>
+            <img  src="https://openweathermap.org/img/wn/${
+              element.weather[0].icon
+            }@2x.png" class="w-15 mx-auto my-1" />
+            <p class="text-gray-300">${Math.round(
+              element.main.temp_max - 273.15
+            )}°C</p>
+            <p class="text-gray-300 text-xs">${
+              element.weather[0].description
+            }</p>
           </div>`;
   }
-  mainCrenderFiveDayForcastontener.innerHTML = box
+  mainCrenderFiveDayForcastontener.innerHTML = box;
 }
 
 async function getWeatherDetails(lat, lon) {
@@ -52,7 +58,7 @@ async function getWeatherDetails(lat, lon) {
 
   const currentResponse = await fetch(UURRENT_WEATHER_API_URL);
   const currentData = await currentResponse.json();
-  console.log("currentData", currentData);
+  // console.log("currentData", currentData);
 
   const name = currentData.name;
   const temp = Math.round(currentData.main.temp - 273.15);
@@ -99,7 +105,7 @@ async function getWeatherDetails(lat, lon) {
   const WEATHER_API_URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_key}`;
   const response = await fetch(WEATHER_API_URL);
   const data = await response.json();
-  console.log("data ye hai", data);
+  // console.log("data ye hai", data);
 
   const uniqueForecastDays = [];
   const fiveDaysForecast = data.list.filter((forecast) => {
@@ -108,21 +114,19 @@ async function getWeatherDetails(lat, lon) {
       return uniqueForecastDays.push(forecastDate);
     }
   });
-  fiveDaysForecast.shift()
+  fiveDaysForecast.shift();
   renderFiveDaysForecast(fiveDaysForecast);
-  console.log(fiveDaysForecast);
+  // console.log(fiveDaysForecast);
 
-  console.log(name, lat, lon);
+  // console.log(name, lat, lon);
 
   setInterval(() => {
     let date = new Date();
-    console.log(date.getDate());
+    // console.log(date.getDate());
     renderDate.innerHTML = date;
   }, 1000);
   let date = new Date();
-  console.log(date.getDate());
   renderDate.innerHTML = date;
-
   citys.push(name);
   localStorage.setItem("citys", JSON.stringify(citys));
   let uniqueCitys = [...new Set(citys)];
@@ -137,7 +141,7 @@ async function handleSearchClick() {
     const URL = `https://api.openweathermap.org/data/2.5/forecast?q=${city_name}&appid=${API_key}`;
     const response = await fetch(URL);
     const data = await response.json();
-    console.log("data is", data);
+    // console.log("data is", data);
 
     const arr = Array.from(Object.entries(data));
     if (!arr.length) return alert(`No coordinates found for ${city_name}`);

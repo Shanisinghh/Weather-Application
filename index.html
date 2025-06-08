@@ -6,7 +6,7 @@
     <title>Weather App</title>
     <link href="src/output.css" rel="stylesheet" />
   </head>
-  <body class="background  bg-[#c7b7b7] " id="header">
+  <body class="background bg-[#c7b7b7]" id="header">
     <div class="h-[97vh]">
       <div>
         <h1 class="text-4xl md:text-5xl font-bold text-center my-6">
@@ -32,7 +32,7 @@
                 placeholder="City Name"
               />
               <button
-              id="searchBtn"
+                id="searchBtn"
                 class="bg-[#3250da] w-[22vw] sm:w-[20vw] lg:w-[8vw] hover:bg-[#465180] py-1.5 text-amber-50 border-black cursor-pointer"
               >
                 Search
@@ -41,7 +41,8 @@
             <div class="text-center md:flex">
               <p class="text-center font-bold mx-1.5">&</p>
               <button
-                id="locationBtn" class="bg-[#1fe741] w-[95%] md:w-[15vw] text-white py-1 hover:bg-[#4d8b57] cursor-pointer"
+                id="locationBtn"
+                class="bg-[#1fe741] w-[95%] md:w-[15vw] text-white py-1 hover:bg-[#4d8b57] cursor-pointer"
               >
                 Use Current Location
               </button>
@@ -49,14 +50,21 @@
           </div>
           <div>
             <select name="city" id="city" class="outline-none m-2.5 text-sm">
-                <option class="" value="previous" >Previous Search</option>
+              <option class="" value="previous">Previous Search</option>
             </select>
           </div>
         </div>
       </div>
-      <div id="mainContener" class="md:flex md:m-4 md:justify-around md:text-center">
+      <div
+        id="mainContener"
+        class="md:flex md:m-4 md:justify-around md:text-center"
+      >
         <div id="wetherPhoto">
-          <img src="image/clear sky.png" alt="sun" class="md:w-45 w-45 mx-auto my-1" />
+          <img
+            src="image/clear sky.png"
+            alt="sun"
+            class="md:w-45 w-45 mx-auto my-1"
+          />
         </div>
         <div class="text-center">
           <h2
@@ -72,17 +80,21 @@
             light rain
           </p>
         </div>
-        <div id="weatherData"
+        <div
+          id="weatherData"
           class="text-gray-300 text-md md:text-lg p-3 bg-[rgba(0,0,0,0.5)] ml-[2%] w-[96%] md:w-[25%] rounded-xl mb-3"
         >
           <h2 class="text-[23px] font-bold text-gray-300">Weather Data</h2>
           <div class="m-1">🌡️ Feels like: <span id="feelsLike">31°C</span></div>
-          <div class="m-1">💧Outdoor Humidity : <span id="humidity">15%</span></div>
+          <div class="m-1">
+            💧Outdoor Humidity : <span id="humidity">15%</span>
+          </div>
           <div class="m-1">💨 Wind Speed: <span id="wind">14 km/h</span></div>
         </div>
       </div>
-      <div >
-        <div id="renderFiveDayForcast"
+      <div>
+        <div
+          id="renderFiveDayForcast"
           class="grid grid-cols-5 gap-4 bg-[rgba(0,0,0,0.5)] w-[97%] m-auto rounded-xl p-4 text-center shadow-2xl text-sm"
         >
           <div>
