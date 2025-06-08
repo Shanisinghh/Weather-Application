@@ -37,18 +37,20 @@ function renderFiveDaysForecast(fiveDaysForecast) {
     // console.log(date);
 
     console.log();
-    box += `<div>
-            <p class="font-semibold text-md text-gray-300">${date}</p>
-            <img  src="https://openweathermap.org/img/wn/${
-              element.weather[0].icon
-            }@2x.png" class="w-15 mx-auto my-1" />
-            <p class="text-gray-300">${Math.round(
-              element.main.temp_max - 273.15
-            )}°C</p>
-            <p class="text-gray-300 text-xs">${
-              element.weather[0].description
-            }</p>
-          </div>`;
+
+    box +=`<div class="bg-[rgba(0,0,0,0.5)] p-1 rounded-xl" >
+            <p class="font-semibold text-lg text-gray-300">${date}</p>
+              <img  src="https://openweathermap.org/img/wn/${element.weather[0].icon}@2x.png" class="w-15 mx-auto my-1" />
+              <p class="text-gray-300 text-xs">${element.weather[0].description}</p>
+            <p class="text-gray-300 " >Temprature : ${Math.round( element.main.temp_max - 273.15)}°C</p>
+            <div class=" text-gray-300 ">
+            Humidity : <span id="humidity">${element.main.humidity}%</span>
+            </div>
+            <div class=" text-gray-300 "> Wind Speed: <span id="wind">${Math.round(
+            element.wind.speed * 3.6
+          )}km/h</span></div>
+            </div>`
+
   }
   mainCrenderFiveDayForcastontener.innerHTML = box;
 }
@@ -105,7 +107,7 @@ async function getWeatherDetails(lat, lon) {
   const WEATHER_API_URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_key}`;
   const response = await fetch(WEATHER_API_URL);
   const data = await response.json();
-  // console.log("data ye hai", data);
+  console.log("data ye hai", data);
 
   const uniqueForecastDays = [];
   const fiveDaysForecast = data.list.filter((forecast) => {

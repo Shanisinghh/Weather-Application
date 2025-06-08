@@ -57,7 +57,7 @@
       </div>
       <div
         id="mainContener"
-        class="md:flex md:m-4 md:justify-around md:text-center"
+        class="md:flex md:mt-2 md:justify-around md:text-center"
       >
         <div id="wetherPhoto">
           <img
@@ -93,40 +93,63 @@
         </div>
       </div>
       <div>
+        <h2 class="text-[23px] ml-2 mb-2 md:ml-3 text-gray-300 font-bold">5-Day Forcast</h2>
         <div
           id="renderFiveDayForcast"
-          class="grid grid-cols-5 gap-4 bg-[rgba(0,0,0,0.5)] w-[97%] m-auto rounded-xl p-4 text-center shadow-2xl text-sm"
+          class="grid text-[10px] md:text-[13px] grid-cols-3 md:grid-cols-5 gap-1 md:gap-3 md:p-2.5 bg-[rgba(0,0,0,0.4)] w-[98%] m-auto rounded-xl p-0.5  text-center shadow-2xl text-sm"
         >
-          <div>
-            <p class="font-semibold text-lg text-gray-300">Date</p>
-            <img src="image/few clouds.png" class="w-15 mx-auto my-1" />
-            <p class="text-gray-300">23°C</p>
-            <p class="text-gray-300 text-xs">Overcast clouds</p>
-          </div>
-          <div>
+          
+          <div class="bg-[rgba(0,0,0,0.5)] p-1 rounded-xl" >
             <p class="font-semibold text-lg text-gray-300">Date</p>
             <img src="image/clear sky.png" class="w-15 mx-auto my-1" />
-            <p class="text-gray-300">26°C</p>
-            <p class="text-gray-300 text-xs">Clear sky</p>
-          </div>
-          <div>
+              <p class="text-gray-300 text-xs ">Clear sky</p>
+            <p class="text-gray-300 " >Temprature : 26°C</p>
+            <div class=" text-gray-300 ">
+             Humidity : <span id="humidity">15%</span>
+            </div>
+            <div class=" text-gray-300 "> Wind Speed: <span id="wind">14 km/h</span></div>
+            </div>
+          <div class="bg-[rgba(0,0,0,0.5)] p-1 rounded-xl" >
+            <p class="font-semibold text-lg text-gray-300">Date</p>
+            <img src="image/few clouds.png" class="w-15 mx-auto my-1" />
+              <p class="text-gray-300 text-xs">Clear sky</p>
+            <p class="text-gray-300">Temprature : 26°C</p>
+            <div class=" text-gray-300 ">
+             Humidity : <span id="humidity">15%</span>
+            </div>
+            <div class=" text-gray-300 "> Wind Speed: <span id="wind">14 km/h</span></div>
+            </div>
+          <div class="bg-[rgba(0,0,0,0.5)] p-1 rounded-xl" >
             <p class="font-semibold text-lg text-gray-300">Date</p>
             <img src="image/haza.png" class="w-15 mx-auto my-1" />
-            <p class="text-gray-300">25°C</p>
-            <p class="text-gray-300 text-xs">Haze</p>
-          </div>
-          <div>
+              <p class="text-gray-300 text-xs">Clear sky</p>
+            <p class="text-gray-300">Temprature : 26°C</p>
+            <div class=" text-gray-300 ">
+             Humidity : <span id="humidity">15%</span>
+            </div>
+            <div class=" text-gray-300 "> Wind Speed: <span id="wind">14 km/h</span></div>
+            </div>
+          <div class="bg-[rgba(0,0,0,0.5)] p-1 rounded-xl" >
             <p class="font-semibold text-lg text-gray-300">Date</p>
             <img src="image/light rain.png" class="w-15 mx-auto my-1" />
-            <p class="text-gray-300">22°C</p>
-            <p class="text-gray-300 text-xs">Light Rain</p>
-          </div>
-          <div>
+              <p class="text-gray-300 text-xs">Clear sky</p>
+            <p class="text-gray-300">Temprature : 26°C</p>
+            <div class=" text-gray-300 ">
+             Humidity : <span id="humidity">15%</span>
+            </div>
+            <div class=" text-gray-300 "> Wind Speed: <span id="wind">14 km/h</span></div>
+            </div>
+          <div class="bg-[rgba(0,0,0,0.5)] p-1 rounded-xl" >
             <p class="font-semibold text-lg text-gray-300">Date</p>
             <img src="image/Thunderstorm.png" class="w-15 mx-auto my-1" />
-            <p class="text-gray-300">24°C</p>
-            <p class="text-gray-300 text-xs">Thunderstorm</p>
-          </div>
+              <p class="text-gray-300 text-xs">Clear sky</p>
+            <p class="text-gray-300">Temprature : 26°C</p>
+            <div class=" text-gray-300 ">
+             Humidity : <span id="humidity">15%</span>
+            </div>
+            <div class=" text-gray-300 "> Wind Speed: <span id="wind">14 km/h</span></div>
+            </div>
+          
         </div>
       </div>
     </div>
