@@ -136,7 +136,7 @@ async function getWeatherDetails(lat, lon) {
 async function handleSearchClick() {
   const city_name = cityInput.value.trim();
   cityInput.value = "";
-  if (city_name === "") return;
+  if (city_name === "") return alert("Please enter any city name!");
   try {
     const URL = `https://api.openweathermap.org/data/2.5/forecast?q=${city_name}&appid=${API_key}`;
     const response = await fetch(URL);
