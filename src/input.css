@@ -1,0 +1,14 @@
+@import "tailwindcss";
+@theme {
+  --breakpoint-md: 770px;
+  --breakpoint-sm: 450px;
+}
+.background{
+    background-image: url(/image/background.jpg);
+    background-position: cover;
+    background-size: cover;
+    background-repeat: repeat;
+ 
+}
+
+
