@@ -112,20 +112,6 @@ async function getWeatherDetails(lat, lon) {
   renderFiveDaysForecast(fiveDaysForecast);
   console.log(fiveDaysForecast);
 
-  //   renderTemp.innerHTML = `<h2>
-  //             ${temp}<sup class="text-5xl md:text-6xl">°C</sup>
-  //           </h2>`
-  //   renderCloude.innerHTML = cloud
-  //   weatherData.innerHTML = ` <div id="weatherData"
-  //           class="text-gray-300 text-md md:text-xl p-3 ml-[2%] w-[96%] rounded-xl mb-3"
-  //         >
-  //           <div class="m-1">🌡️ Feels like: <span id="feelsLike">${Math.round(data.main.feels_like-273.15)}°C</span></div>
-  //           <div class="m-1">💧 Humidity: <span id="humidity">${data.main.humidity}%</span></div>
-  //           <div class="m-1">💨 Wind Speed: <span id="wind">${Math.round(data.wind.speed*3.6)} km/h</span></div>
-  //         </div>`
-  //         wetherPhoto.innerHTML = `<div id="wetherPhoto" class="md:flex md:m-4 md:justify-around md:text-center">
-  //           <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png"/>
-  //         </div>`
   console.log(name, lat, lon);
 
   setInterval(() => {
@@ -152,15 +138,6 @@ async function handleSearchClick() {
     const response = await fetch(URL);
     const data = await response.json();
     console.log("data is", data);
-
-    // const uniqueForecastDays = [];
-    //     const fiveDaysForecast = data.list.filter(forecast => {
-    //         const forecastDate = new Date(forecast.dt_txt).getDate();
-    //         if (!uniqueForecastDays.includes(forecastDate)) {
-    //             return uniqueForecastDays.push(forecastDate);
-    //         }
-    //     });
-    //     console.log(fiveDaysForecast)
 
     const arr = Array.from(Object.entries(data));
     if (!arr.length) return alert(`No coordinates found for ${city_name}`);
